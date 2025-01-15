@@ -198,13 +198,15 @@ public class FetchMetricsManager {
 
     static Map<String, String> topicTags(String topic) {
         Map<String, String> metricTags = new HashMap<>(1);
-        metricTags.put("topic", topic.replace('.', '_'));
+        //metricTags.put("topic", topic.replace('.', '_'));
+        metricTags.put("topic", topic);
         return metricTags;
     }
 
     static Map<String, String> topicPartitionTags(TopicPartition tp) {
         Map<String, String> metricTags = new HashMap<>(2);
-        metricTags.put("topic", tp.topic().replace('.', '_'));
+        //metricTags.put("topic", tp.topic().replace('.', '_'));
+        metricTags.put("topic", tp.topic());
         metricTags.put("partition", String.valueOf(tp.partition()));
         return metricTags;
     }
